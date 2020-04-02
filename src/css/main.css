@@ -37,8 +37,8 @@ h1{
   cursor: pointer;
   text-align: center;
   border: 2px solid rgb(0,0,0);
-  width: 120px;
-  height: 260px;
+  width: 140px;
+  height: 160px;
   box-shadow: 2px 2px 8px #222;
 }
 .Gridbox:hover{
