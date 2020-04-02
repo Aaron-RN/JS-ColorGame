@@ -3,6 +3,7 @@ import Board from './board';
 class GameModel {
   constructor() {
     this.board = null;
+    this.colorDisplay = 'RGB';
     this.gameMode = 'Survival';
     this.difficulty = 'Normal';
     this.R = null;

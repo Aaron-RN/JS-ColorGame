@@ -64,8 +64,11 @@ class GameView {
       colorBox.setAttribute('id', `box-${colorObj.id}`);
       colorBox.classList.add('Gridbox');
       colorBox.onclick = () => this.ClickColor(i);
-      colorBox.setAttribute('data-bg', `${colorObj.r}${colorObj.g}${colorObj.b}`);
-      colorBox.setAttribute('style', `background-color: rgb(${colorObj.r}, ${colorObj.g}, ${colorObj.b});`);
+      if (game.colorDisplay === 'RGB') {
+        colorBox.setAttribute('style', `background-color: ${colorObj.hex};`);
+      } else {
+        colorBox.setAttribute('style', `background-color: rgb(${colorObj.r}, ${colorObj.g}, ${colorObj.b});`);
+      }
       this.GameBox.appendChild(colorBox);
     }
   }
