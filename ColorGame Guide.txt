@@ -1,0 +1,10 @@
+ColorGame
+
+- Difficulty settings change the amount of colors you have to guess from
+- Switch between HexDecimal and RGB mode
+- Highscore system using mongoDB perhaps
+- Set timer between each round
+- Require name to set HighScore
+- SFX
+- Awesome Transitions
+- Time survival mode with the ability to switch unknown color pallettes
