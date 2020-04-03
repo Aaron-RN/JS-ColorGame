@@ -61,6 +61,7 @@ class GameView {
     clearInterval(this.game.timer);
     this.Body.classList.add('blur');
     this.Modal.classList.toggle('hide');
+    this.Modal.classList.toggle('animate-fade-in');
     this.ModalContent.textContent = 'Game Over!';
   }
 
@@ -89,7 +90,7 @@ class GameView {
     game.time = game.maxRoundTime;
     this.TimeClock.textContent = game.time;
     game.timer = setInterval(() => ClockTick(this), 1000);
-    this.ColorHeader.innerHTML = `<h1 id="RGB">rgb( <span id="R">${game.R}</span>, <span id="G"> ${game.G}</span>, <span id="B"> ${game.B}</span> )</h1>`;
+    this.ColorHeader.innerHTML = `<span id='RGB'>rgb</span>( <span id="R">${game.R}</span>, <span id="G"> ${game.G}</span>, <span id="B"> ${game.B}</span> )`;
     const { board } = this.game;
     for (let i = 0; i < board.maxColors; i += 1) {
       const colorObj = board.colors[i];

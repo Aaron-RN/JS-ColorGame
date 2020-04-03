@@ -5,7 +5,9 @@ main {
 }
 #ColorCoding{
   margin-left: 1.4em;
+  font-size: 32px;
 }
+#RGB {font-weight: bold;}
 #Lives{
   margin-left: 1.4em;
   font-size: 34px;
@@ -27,7 +29,7 @@ main {
 }
 
 h1{
-  margin-bottom: 6px;
+  margin: 0;
 }
 
 .center { margin: auto; text-align: center; }
@@ -141,12 +143,23 @@ h1{
 }
 
 /* ANIMATIONS */
+.animate-fade-in {animation: fade-in 0.5s ease 0s 1; }
+.animate-fade-out {animation: fade-out 0.5s ease 0s 1; }
 .animate-grow {animation: grow 0.5s ease 0s infinite alternate; }
 .animate-shrink { animation: shrink 0.5s ease 0s 1 forwards; }
 .animate-slideUp { animation: slideUp 0.5s ease 0s 1 alternate; }
 .animate-slideLeft { animation: slideLeft 0.5s ease 0s 1 alternate; }
 
 /* ANIMATION KEYFRAMES */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
 @keyframes grow {
   from { transform: scale(1); }
   to { transform: scale(1.15); }
