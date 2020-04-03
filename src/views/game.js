@@ -18,7 +18,7 @@ function ClockTick(gameView) {
   game.time -= 1;
   gameView.TimeClock.textContent = game.time;
   if (game.time <= 0) {
-    gameView.ClickColor('-1');
+    gameView.ClickColor(null, '-1');
   }
 }
 
@@ -32,6 +32,7 @@ function ShowHearts(elem, lives) {
   }
 }
 
+
 class GameView {
   constructor() {
     this.game = null;
@@ -43,6 +44,7 @@ class GameView {
     this.Body = document.querySelector('#main');
     this.Modal = document.querySelector('#Modal');
     this.ModalContent = document.querySelector('#ModalContent');
+    this.lastClickLocation = null;
   }
 
   run() {
@@ -57,6 +59,16 @@ class GameView {
     lastHeart.classList.add('animate-shrink');
   }
 
+  PlusPoint(mouseLocation) {
+    const score = document.createElement('div');
+    score.setAttribute('style', `top:${mouseLocation.Y}px; left:${mouseLocation.X}px`);
+    score.classList.add('animate-score', 'score-fx');
+    score.innerHTML = '<i class="fas fa-plus"></i>1';
+    this.Body.appendChild(score);
+    setTimeout(() => this.Body.removeChild(score), 1000);
+    this.Points.innerHTML = `<span>Score:</span> ${this.game.pointsScored}`;
+  }
+
   ShowGameOver() {
     clearInterval(this.game.timer);
     this.Body.classList.add('blur');
@@ -65,12 +77,13 @@ class GameView {
     this.ModalContent.textContent = 'Game Over!';
   }
 
-  ClickColor(i) {
+  ClickColor(e, i) {
+    const mouseLocation = e ? { X: e.clientX, Y: e.clientY } : null;
     const { board } = this.game;
     if (this.game.gameOver) return;
     const colorSelected = board.retrieveColor(i);
     if (this.game.checkColor(colorSelected)) {
-      this.Points.innerHTML = `<span>Score:</span> ${this.game.pointsScored}`;
+      this.PlusPoint(mouseLocation);
       this.newRound();
     } else {
       this.LoseLife();
@@ -97,7 +110,7 @@ class GameView {
       const colorBox = document.createElement('div');
       colorBox.setAttribute('id', `box-${colorObj.id}`);
       colorBox.classList.add('Gridbox');
-      colorBox.onclick = () => this.ClickColor(i);
+      colorBox.onclick = (e) => this.ClickColor(e, i);
       if (game.colorDisplay === 'RGB') {
         colorBox.setAttribute('style', `background-color: ${colorObj.hex};`);
       } else {

@@ -1,15 +1,29 @@
+body {
+  background-color: #EfEfEf;
+}
+
+#main { position: relative; height: 95vh; }
+
 main {
   text-align: center;
   margin: 0 auto;
   padding: 22px;
 }
+
+footer {
+  display: block;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.container { max-width: calc(1600px + 10%); padding-left: 10%; padding-right: 10%; }
+
 #ColorCoding{
-  margin-left: 1.4em;
   font-size: 32px;
 }
 #RGB {font-weight: bold;}
 #Lives{
-  margin-left: 1.4em;
   font-size: 34px;
   display: flex;
   height: 40px;
@@ -21,7 +35,6 @@ main {
 }
 
 #Points{
-  margin-left: 1.4em;
   font-size: 30px;
 }
 #Points > span{
@@ -29,13 +42,18 @@ main {
 }
 
 h1{
-  margin: 0;
+  margin-bottom: 1em;
 }
 
-.center { margin: auto; text-align: center; }
+.title { display: block; }
+
+.center { margin: auto;}
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.m-t-1 { margin-top: 1em; }
 
 .fa-stopwatch {
-  font-size: 60px;
+  font-size: 9vmin;
   color: #888;
 }
 
@@ -53,6 +71,7 @@ h1{
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 12px;
   max-width: 40%;
+  box-shadow: 6px 8px 4px #444;
 }
 
 .Gridbox {
@@ -96,6 +115,7 @@ h1{
 .hide{
   visibility: hidden;
 }
+.text-black { color: #000; }
 
 #R{
   color: #C44;
@@ -107,8 +127,22 @@ h1{
   color: #44C;
 }
 
+.fa-plus {
+  font-size: 0.5em;
+}
+
+.score-fx {
+  font-size: 2em;
+  color: #333;
+  position: absolute;
+  text-shadow: 0 0 4px #FC5;
+}
+
 /* Small screens less than 720px */
 @media screen and (max-width: 720px) {
+  .container { max-width: calc(1600px + 10%); padding-left: 2%; padding-right: 2%; }
+  .title { display: none; }
+
   #GameBox {
     max-width: 90%;
   }
@@ -125,6 +159,8 @@ h1{
 
 /* Medium devices (landscape tablets, 720px - 1024px) */
 @media only screen and (min-width: 721px) and (max-width: 1023px) {
+  .container { max-width: calc(1600px + 10%); padding-left: 2%; padding-right: 2%; }
+
   #GameBox {
     max-width: 80%;
   }
@@ -143,6 +179,7 @@ h1{
 }
 
 /* ANIMATIONS */
+.animate-score {animation: score 1s ease 0s infinite; }
 .animate-fade-in {animation: fade-in 0.5s ease 0s 1; }
 .animate-fade-out {animation: fade-out 0.5s ease 0s 1; }
 .animate-grow {animation: grow 0.5s ease 0s infinite alternate; }
@@ -158,6 +195,13 @@ h1{
 @keyframes fade-out {
   from { opacity: 1; }
   to { opacity: 0; }
+}
+
+@keyframes score {
+  0% { opacity: 1; }
+  50% { transform: scale(2) translateX(10px) translateY(-60px); }
+  80% { transform: scale(1) translateX(20px) translateY(-80px); }
+  100% { opacity: 0; }
 }
 
 @keyframes grow {
