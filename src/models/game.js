@@ -10,18 +10,32 @@ class GameModel {
     this.G = null;
     this.B = null;
     this.round = 1;
+    this.pointsScored = 0;
     this.lives = 3;
     this.maxRoundTime = 10;
     this.time = this.maxRoundTime;
     this.timer = null;
+    this.gameOver = false;
+  }
+
+  GameOver() {
+    if (this.lives <= 0) {
+      this.gameOver = true;
+      return true;
+    }
+
+    return false;
   }
 
   checkColor(colorSelected) {
     const { r, g, b } = colorSelected;
     if (this.R === r && this.G === g && this.B === b) {
+      this.pointsScored += 1;
       return true;
     }
 
+    this.lives -= 1;
+    this.GameOver();
     return false;
   }
 

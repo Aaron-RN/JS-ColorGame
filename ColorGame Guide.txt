@@ -1,9 +1,9 @@
 ColorGame
 
-- Difficulty settings change the amount of colors you have to guess from
+- Difficulty settings change the amount of colors you have to guess from - YEET
 - Switch between HexDecimal and RGB mode
 - Highscore system using mongoDB perhaps
-- Set timer between each round
+- Set timer between each round - YEET
 - Require name to set HighScore
 - SFX
 - Awesome Transitions
