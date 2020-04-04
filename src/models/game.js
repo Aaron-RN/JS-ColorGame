@@ -46,13 +46,15 @@ class GameModel {
     this.board.PopulateColors(this.R, this.G, this.B);
   }
 
-  NewGame(setDifficulty) {
+  NewGame(setDifficulty, setColorDisplay) {
     this.difficulty = setDifficulty;
+    this.colorDisplay = setColorDisplay;
     const { difficulty } = this;
     let maxColors = 4;
     if (difficulty === 'Easy') maxColors = 3;
+    if (difficulty === 'Normal') maxColors = 4;
     if (difficulty === 'Hard') maxColors = 6;
-    if (difficulty === 'Muy Dificil') maxColors = 8;
+    if (difficulty === 'Oops') maxColors = 8;
     this.board = new Board(maxColors);
   }
 

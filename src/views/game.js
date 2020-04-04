@@ -1,4 +1,5 @@
 import '../css/main.css';
+import RGBToHex from '../models/rgbToHex';
 import GameModel from '../models/game';
 
 function RemoveChildren(elem) {
@@ -32,7 +33,6 @@ function ShowHearts(elem, lives) {
   }
 }
 
-
 class GameView {
   constructor() {
     this.game = null;
@@ -47,9 +47,9 @@ class GameView {
     this.lastClickLocation = null;
   }
 
-  run() {
+  run(setDifficulty, setColorDisplay) {
     this.game = new GameModel();
-    this.game.NewGame('Normal');
+    this.game.NewGame(setDifficulty, setColorDisplay);
     ShowHearts(this.Lives, this.game.lives);
     this.newRound();
   }
@@ -103,7 +103,17 @@ class GameView {
     game.time = game.maxRoundTime;
     this.TimeClock.textContent = game.time;
     game.timer = setInterval(() => ClockTick(this), 1000);
-    this.ColorHeader.innerHTML = `<span id='RGB'>rgb</span>( <span id="R">${game.R}</span>, <span id="G"> ${game.G}</span>, <span id="B"> ${game.B}</span> )`;
+    if (game.colorDisplay === 'RGB') {
+      this.ColorHeader.innerHTML = `<span id='RGB'>rgb</span>
+      ( <span id="R">${game.R}</span>, <span id="G"> ${game.G}</span>, <span id="B"> ${game.B}</span> )`;
+    } else {
+      const hex = RGBToHex(game.R, game.G, game.B);
+      const hex1 = `${hex[1]}${hex[2]}`;
+      const hex2 = `${hex[3]}${hex[4]}`;
+      const hex3 = `${hex[5]}${hex[6]}`;
+      this.ColorHeader.innerHTML = `<span id='RGB'>hex</span>
+      ( <span id="R">${hex1}</span>, <span id="G"> ${hex2}</span>, <span id="B"> ${hex3}</span> )`;
+    }
     const { board } = this.game;
     for (let i = 0; i < board.maxColors; i += 1) {
       const colorObj = board.colors[i];
