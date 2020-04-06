@@ -1,4 +1,5 @@
 import ColorGame from './views/game';
+import playSound from './models/audio';
 
 const menuDiv = document.querySelector('#GameMenu');
 const gameDiv = document.querySelector('#ActiveGame');
@@ -12,6 +13,7 @@ let difficulty = 'Normal';
 let colorDisplay = 'RGB';
 
 difficultyBtn.addEventListener('click', () => {
+  playSound('menu');
   if (difficulty === 'Easy') {
     difficulty = 'Normal';
     difficultyDiv.classList.remove('Y');
@@ -33,6 +35,7 @@ difficultyBtn.addEventListener('click', () => {
 });
 
 colorDisplayBtn.addEventListener('click', () => {
+  playSound('menu');
   colorDisplay = colorDisplay === 'RGB' ? 'HEX' : 'RGB';
   colorDisplayDiv.textContent = colorDisplay;
 });

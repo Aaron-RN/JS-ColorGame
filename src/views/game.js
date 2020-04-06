@@ -1,4 +1,5 @@
 import '../css/main.css';
+import playSound from '../models/audio';
 import RGBToHex from '../models/rgbToHex';
 import GameModel from '../models/game';
 
@@ -18,6 +19,7 @@ function ClockTick(gameView) {
   const { game } = gameView;
   game.time -= 1;
   gameView.TimeClock.textContent = game.time;
+  if (game.time <= 3 && game.time !== 0) { playSound('alarm'); }
   if (game.time <= 0) {
     gameView.ClickColor(null, '-1');
   }
@@ -48,6 +50,7 @@ class GameView {
   }
 
   run(setDifficulty, setColorDisplay) {
+    playSound('gameStart');
     this.game = new GameModel();
     this.game.NewGame(setDifficulty, setColorDisplay);
     ShowHearts(this.Lives, this.game.lives);
@@ -55,11 +58,13 @@ class GameView {
   }
 
   LoseLife() {
+    playSound('heartbreak');
     const lastHeart = document.querySelector(`#heart-${this.game.lives + 1}`);
     lastHeart.classList.add('animate-shrink');
   }
 
   PlusPoint(mouseLocation) {
+    playSound('score');
     const score = document.createElement('div');
     score.setAttribute('style', `top:${mouseLocation.Y}px; left:${mouseLocation.X}px`);
     score.classList.add('animate-score', 'score-fx');
@@ -70,6 +75,7 @@ class GameView {
   }
 
   ShowGameOver() {
+    playSound('gameover');
     clearInterval(this.game.timer);
     this.Body.classList.add('blur');
     this.Modal.classList.toggle('hide');
