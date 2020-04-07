@@ -59,7 +59,6 @@ class GameModel {
     if (difficulty === 'Oops') maxColors = 8;
     this.board = new Board(maxColors);
   }
-
 }
 
 export default GameModel;

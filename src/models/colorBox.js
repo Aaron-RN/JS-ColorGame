@@ -1,7 +1,9 @@
 import RGBToHex from './rgbToHex';
 
 const colorBox = (i, maxLength, color = { R: null, G: null, B: null }) => {
-  const colorObj = { id: i, r: null, g: null, b: null, hex: null };
+  const colorObj = {
+    id: i, r: null, g: null, b: null, hex: null,
+  };
   if (color.R && color.G && color.B) {
     const { R, G, B } = color;
     colorObj.r = R;

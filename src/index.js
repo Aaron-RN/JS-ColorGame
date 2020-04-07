@@ -76,6 +76,7 @@ aliasBtn.addEventListener('click', () => {
     playSound('menu');
     if (!aliasValue || aliasValue === ' ') errors.push('cannot be blank');
     if (aliasValue.length < 3) errors.push('must be greater than 2 characters');
+    // eslint-disable-next-line arrow-body-style
     aliasErrors.innerHTML = errors.map(error => {
       return `Alias: <span class="text-white">"${aliasInput.value}"</span> ${error} <br>`;
     }).join('');
