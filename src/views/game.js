@@ -126,9 +126,6 @@ class GameView {
     this.Modal.classList.add('animate-gameover');
     this.GameOverMenu.classList.toggle('hide');
     updateScore(URI, this.game.playerAlias, this.game.difficulty, this.game.pointsScored);
-    populateScores(URI, 'normal');
-    populateScores(URI, 'hard');
-    populateScores(URI, 'oops');
     setTimeout(() => {
       this.Modal.classList.remove('animate-gameover');
       this.Body.classList.remove('blur');

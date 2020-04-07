@@ -33,8 +33,8 @@ router.route('/oops').get((req, res) => {
 });
 
 router.route('/alias').get((req, res) => {
-  const aliasG = req.body.alias;
-  const difficultyG = req.body.difficulty;
+  const aliasG = req.query.alias.toLowerCase();
+  const difficultyG = req.query.difficulty.toLowerCase();
   HighScore.findOne({ alias: aliasG, difficulty: difficultyG })
     .then(scores => res.json(scores))
     .catch(err => res.status(400).json('Error: ', err));
