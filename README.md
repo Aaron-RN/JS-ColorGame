@@ -5,16 +5,26 @@ Can you guess which color corresponds to the shown RGB and Hex code?
 ![screenshot](./screenshot2.png)
 
 
-## [Live DEMO](https://raw.githack.com/Aaron-RN/JS-ColorGame/base-game/dist/index.html)
+## [Live DEMO](https://raw.githack.com/Aaron-RN/JS-ColorGame/development/dist/index.html)
+
+## Dependencies
+
+- Axios
+- Cors
+- Express
+- Mongoose
+- Dotenv
 
 ## Built With
 
 - HTML, CSS
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [Node Package Manager(NPM)](https://www.npmjs.com/)
+- [Node.js](https://www.nodejs.org/)
+- [MongoDB](https://www.mongodb.com/)
 
 
-## Authors
+## Author
 
 👤 **Aaron Rory**
 

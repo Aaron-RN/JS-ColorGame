@@ -33,37 +33,52 @@ router.route('/oops').get((req, res) => {
 });
 
 router.route('/alias').get((req, res) => {
-  const aliasG = req.query.alias;
-  const difficultyG = req.query.difficulty;
+  const aliasG = req.query.alias.toLowerCase();
+  const difficultyG = req.query.difficulty.toLowerCase();
   HighScore.findOne({ alias: aliasG, difficulty: difficultyG })
     .then(scores => res.json(scores))
     .catch(err => res.status(400).json('Error: ', err));
 });
 
 router.route('/update/:alias/:difficulty').post((req, res) => {
-  const aliasG = req.params.alias;
-  const difficultyG = req.params.difficulty;
+  const aliasG = req.params.alias.toLowerCase();
+  const difficultyG = req.params.difficulty.toLowerCase();
   const query = { alias: aliasG, difficulty: difficultyG };
-  const { score } = req.query;
-  HighScore.findOneAndUpdate(query, {
-    score: Number(score),
-    date: Date.now(),
-  }, { useFindAndModify: false }, (err, item) => {
-    if (err) res.status(400).json(err);
-    if (!item) res.status(400).json("Error: Highscore couldn't be found");
-    res.json(`Alias: ${item.alias} - Highscore Updated`);
-  });
+  const { score } = req.body;
+  HighScore.findOne(query)
+    .then(highscore => {
+      highscore.score = Number(score);
+      highscore.date = Date.now();
+
+      highscore.save()
+        .then(() => res.json('Highscore Updated'))
+        .catch(err => res.status(400).json(err));
+    })
+    .catch(() => {
+      const newHighScore = new HighScore(
+        {
+          difficulty: req.params.difficulty.toLowerCase(),
+          alias: req.params.alias.toLowerCase(),
+          score: Number(req.body.score),
+          date: Date.now(),
+        },
+      );
+      newHighScore.save()
+        .then(() => res.json('new Highscore Added'))
+        .catch(err => res.status(400).json(err));
+      // res.status(400).json(err);
+    });
 });
 
 router.route('/add').post((req, res) => {
   const {
     difficulty, alias, score, date,
-  } = req.query;
+  } = req.body;
 
   const newHighScore = new HighScore(
     {
-      difficulty,
-      alias,
+      difficulty: difficulty.toLowerCase(),
+      alias: alias.toLowerCase(),
       score: Number(score),
       date,
     },
