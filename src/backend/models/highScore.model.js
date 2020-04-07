@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;

@@ -1,32 +1,33 @@
+/* eslint-disable import/no-unresolved */
 const router = require('express').Router();
 const HighScore = require('../models/highScore.model');
 
 router.route('/').get((req, res) => {
-  HighScore.find().sort('-score')
+  HighScore.find().sort({ difficulty: 1, score: -1, date: -1 })
     .then(scores => res.json(scores))
     .catch(err => res.status(400).json('Error: ', err));
 });
 
 router.route('/easy').get((req, res) => {
-  HighScore.find({ difficulty: 'easy' }).sort('-score')
+  HighScore.find({ difficulty: 'easy' }).sort({ score: -1, date: -1 })
     .then(scores => res.json(scores))
     .catch(err => res.status(400).json('Error: ', err));
 });
 
 router.route('/normal').get((req, res) => {
-  HighScore.find({ difficulty: 'normal' }).sort('-score')
+  HighScore.find({ difficulty: 'normal' }).sort({ score: -1, date: -1 })
     .then(scores => res.json(scores))
     .catch(err => res.status(400).json('Error: ', err));
 });
 
 router.route('/hard').get((req, res) => {
-  HighScore.find({ difficulty: 'normal' }).sort('-score')
+  HighScore.find({ difficulty: 'hard' }).sort({ score: -1, date: -1 })
     .then(scores => res.json(scores))
     .catch(err => res.status(400).json('Error: ', err));
 });
 
 router.route('/oops').get((req, res) => {
-  HighScore.find({ difficulty: 'normal' }).sort('-score')
+  HighScore.find({ difficulty: 'oops' }).sort({ score: -1, date: -1 })
     .then(scores => res.json(scores))
     .catch(err => res.status(400).json('Error: ', err));
 });

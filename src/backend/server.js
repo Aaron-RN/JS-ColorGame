@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable import/no-unresolved */
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
