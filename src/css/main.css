@@ -69,6 +69,7 @@ footer {
 }
 .menuButtons > div:hover {
   transform: scale(1.15);
+  background-color: #D5D5D5;
   text-shadow: 0 0 3px#FDA;
 }
 .menuOption{
@@ -233,6 +234,22 @@ table{
   border-right: 1px solid #000;
 }
 
+tbody > tr:nth-child(1) {
+  font-size: 1.8em;
+  background-color: #FC5;
+}
+tbody > tr:nth-child(2) {
+  font-size: 1.6em;
+  background-color: silver;
+}
+tbody > tr:nth-child(3) {
+  font-size: 1.4em;
+  background-color: rgb(158, 109, 89);
+}
+
+tbody > tr > td:nth-child(2) {
+  text-transform: capitalize;
+}
 td {
   padding-right: 2em;
 }
