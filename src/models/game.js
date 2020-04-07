@@ -6,6 +6,7 @@ class GameModel {
     this.colorDisplay = 'RGB';
     this.gameMode = 'Survival';
     this.difficulty = 'Normal';
+    this.playerAlias = null;
     this.R = null;
     this.G = null;
     this.B = null;
@@ -46,7 +47,8 @@ class GameModel {
     this.board.PopulateColors(this.R, this.G, this.B);
   }
 
-  NewGame(setDifficulty, setColorDisplay) {
+  NewGame(setDifficulty, setColorDisplay, setPlayerAlias) {
+    this.playerAlias = setPlayerAlias;
     this.difficulty = setDifficulty;
     this.colorDisplay = setColorDisplay;
     const { difficulty } = this;

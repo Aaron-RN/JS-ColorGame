@@ -37,6 +37,23 @@ function ShowHearts(elem, lives) {
 
 class GameView {
   constructor() {
+    const playAgainBtn = document.createElement('button');
+    playAgainBtn.setAttribute('type', 'button');
+    playAgainBtn.setAttribute('id', 'PlayAgainBtn');
+    playAgainBtn.classList.add('m-r-2', 'btn');
+    playAgainBtn.addEventListener('click', () => this.PlayAgain());
+    playAgainBtn.textContent = 'Play Again?';
+    const mainMenuBtn = document.createElement('button');
+    mainMenuBtn.setAttribute('type', 'button');
+    mainMenuBtn.setAttribute('id', 'MainMenuBtn');
+    mainMenuBtn.classList.add('btn');
+    mainMenuBtn.addEventListener('click', () => this.MainMenu());
+    mainMenuBtn.textContent = 'Main Menu?';
+    const container = document.createElement('div');
+    container.classList.add('center', 'flex-row');
+    container.appendChild(playAgainBtn);
+    container.appendChild(mainMenuBtn);
+    document.querySelector('#HighScoreMenu').appendChild(container);
     this.game = null;
     this.ColorHeader = document.querySelector('#ColorCoding');
     this.Points = document.querySelector('#Points');
@@ -46,6 +63,7 @@ class GameView {
     this.Body = document.querySelector('#main');
     this.Modal = document.querySelector('#Modal');
     this.ModalContent = document.querySelector('#ModalContent');
+    this.GameOverMenu = document.querySelector('#GameOver');
     this.lastClickLocation = null;
   }
 
@@ -55,6 +73,28 @@ class GameView {
     this.game.NewGame(setDifficulty, setColorDisplay);
     ShowHearts(this.Lives, this.game.lives);
     this.newRound();
+  }
+
+  PlayAgain() {
+    const menuDiv = document.querySelector('#GameMenu');
+    const scoreDiv = document.querySelector('#HighScoreMenu');
+    this.game = null;
+    scoreDiv.classList.toggle('hide');
+    menuDiv.classList.toggle('hide');
+  }
+
+  MainMenu() {
+    playSound('menu');
+    const menuDiv = document.querySelector('#GameMenu');
+    const scoreDiv = document.querySelector('#HighScoreMenu');
+    const aliasInput = document.querySelector('#Alias');
+    const aliasErrors = document.querySelector('#AliasErrors');
+
+    aliasInput.value = '';
+    aliasErrors.textContent = '';
+    this.game = null;
+    scoreDiv.classList.toggle('hide');
+    menuDiv.classList.toggle('hide');
   }
 
   LoseLife() {
@@ -75,12 +115,40 @@ class GameView {
   }
 
   ShowGameOver() {
-    playSound('gameover');
+    const highScoreMenu = document.querySelector('#HighScoreMenu');
+    const personalBestDiv = document.querySelector('#PersonalBest');
+    const recentScoreDiv = document.querySelector('#RecentScore');
     clearInterval(this.game.timer);
     this.Body.classList.add('blur');
     this.Modal.classList.toggle('hide');
-    this.Modal.classList.toggle('animate-fade-in');
-    this.ModalContent.textContent = 'Game Over!';
+    this.Modal.classList.add('animate-gameover');
+    this.GameOverMenu.classList.toggle('hide');
+    setTimeout(() => {
+      this.Modal.classList.remove('animate-gameover');
+      this.Body.classList.remove('blur');
+      this.Modal.classList.toggle('hide');
+      this.GameOverMenu.classList.toggle('hide');
+      document.querySelector('#ActiveGame').classList.toggle('hide');
+      highScoreMenu.classList.toggle('hide');
+    }, 1400);
+    // Check browser support
+    if (typeof (Storage) !== 'undefined') {
+      const highScore = localStorage.getItem('playerScore');
+      if (highScore < this.game.pointsScored) {
+        localStorage.setItem('playerScore', this.game.pointsScored);
+        playSound('personalBest');
+        this.GameOverMenu.innerHTML = '<span class="gameover">New Personal Best!</span>';
+        personalBestDiv.textContent = this.game.pointsScored;
+        recentScoreDiv.textContent = this.game.pointsScored;
+      } else {
+        playSound('gameover');
+        this.GameOverMenu.innerHTML = '<span class="gameover">Game Over!</span>';
+        personalBestDiv.textContent = highScore;
+        recentScoreDiv.textContent = this.game.pointsScored;
+      }
+    } else {
+      document.getElementById('result').innerHTML = 'Sorry, your browser does not support Web Storage...';
+    }
   }
 
   ClickColor(e, i) {
