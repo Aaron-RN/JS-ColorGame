@@ -240,6 +240,9 @@ td {
 .tableData {
   border-bottom: 1px solid #DDD;
 }
+#Normal { overflow-y: scroll; }
+#Hard { overflow-y: scroll; }
+#Oops { overflow-y: scroll; }
 
 .btn {
   cursor: pointer;

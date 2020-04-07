@@ -2,7 +2,7 @@ import '../css/main.css';
 import playSound from '../models/audio';
 import RGBToHex from '../models/rgbToHex';
 import GameModel from '../models/game';
-import { populateScores } from './populateScores';
+import { populateScores, updateScore } from './populateScores';
 
 const URI = 'http://localhost:5000/highscores/';
 function RemoveChildren(elem) {
@@ -69,10 +69,10 @@ class GameView {
     this.lastClickLocation = null;
   }
 
-  run(setDifficulty, setColorDisplay) {
+  run(setDifficulty, setColorDisplay, setPlayerAlias) {
     playSound('gameStart');
     this.game = new GameModel();
-    this.game.NewGame(setDifficulty, setColorDisplay);
+    this.game.NewGame(setDifficulty, setColorDisplay, setPlayerAlias);
     ShowHearts(this.Lives, this.game.lives);
     this.newRound();
   }
@@ -125,6 +125,7 @@ class GameView {
     this.Modal.classList.toggle('hide');
     this.Modal.classList.add('animate-gameover');
     this.GameOverMenu.classList.toggle('hide');
+    updateScore(URI, this.game.playerAlias, this.game.difficulty, this.game.pointsScored);
     populateScores(URI, 'normal');
     populateScores(URI, 'hard');
     populateScores(URI, 'oops');
