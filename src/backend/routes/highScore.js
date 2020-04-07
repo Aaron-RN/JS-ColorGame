@@ -54,7 +54,7 @@ router.route('/update/:alias/:difficulty').post((req, res) => {
         .then(() => res.json('Highscore Updated'))
         .catch(err => res.status(400).json(err));
     })
-    .catch(err => {
+    .catch(() => {
       const newHighScore = new HighScore(
         {
           difficulty: req.params.difficulty.toLowerCase(),

@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+/* eslint-disable import/no-unresolved */
 import axios from 'axios';
 
 async function populateScores(URI) {

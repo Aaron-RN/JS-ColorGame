@@ -2,7 +2,7 @@ import '../css/main.css';
 import playSound from '../models/audio';
 import RGBToHex from '../models/rgbToHex';
 import GameModel from '../models/game';
-import { populateScores, updateScore } from './populateScores';
+import { updateScore } from './populateScores';
 
 const URI = 'http://localhost:5000/highscores/';
 function RemoveChildren(elem) {
