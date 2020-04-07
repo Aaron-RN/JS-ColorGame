@@ -2,7 +2,9 @@ import '../css/main.css';
 import playSound from '../models/audio';
 import RGBToHex from '../models/rgbToHex';
 import GameModel from '../models/game';
+import { populateScores } from './populateScores';
 
+const URI = 'http://localhost:5000/highscores/';
 function RemoveChildren(elem) {
   while (elem.firstChild) {
     elem.removeChild(elem.lastChild);
@@ -123,6 +125,9 @@ class GameView {
     this.Modal.classList.toggle('hide');
     this.Modal.classList.add('animate-gameover');
     this.GameOverMenu.classList.toggle('hide');
+    populateScores(URI, 'normal');
+    populateScores(URI, 'hard');
+    populateScores(URI, 'oops');
     setTimeout(() => {
       this.Modal.classList.remove('animate-gameover');
       this.Body.classList.remove('blur');
