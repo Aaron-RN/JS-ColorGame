@@ -7,7 +7,7 @@ import RGBToHex from '../models/rgbToHex';
 import GameModel from '../models/game';
 import { updateScore } from './populateScores';
 
-const URI = 'http://localhost:5000/highscores/';
+const URI = 'https://colorgamedb.herokuapp.com/highscores/';
 
 function RemoveChildren(elem) {
   while (elem.firstChild) {
