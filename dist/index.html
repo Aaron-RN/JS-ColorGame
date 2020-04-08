@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/056d9f1094.js" crossorigin="anonymous"></script>
+    <script defer src="bundle.js"></script>
+    <title>Color Me Blind</title>
+  </head>
+  <body>
+    <div id="main">
+      <div id="SoundMenu">
+        <i id="SoundIcon" class="fas fa-volume-up size-26"></i>
+        <div id="SoundControls" class="hide">
+          <input id="VolumeSlider" min="0" max="0.5" step="0.05" value="0.1" type="range"/>
+        </div>
+      </div>
+      <div id='GameMenu' class="paletteBG">
+        <header>
+          <div class="menutitle font-header">
+            <i class="fas fa-palette Y"></i>
+            <span class="R">The</span> <span class="G">Color</span> <span class="B">Game</span><span class="animate-title exclaim">!</span> 
+            <i class="fas fa-cube hide-sm Y"></i>
+          </div>
+          <div class="hint">Can you guess that color just by looking at either the Hexadecimal or RGB values?</div>
+        </header>
+        <main>
+          <div class="menuButtons">
+            <div id="DifficultyBtn"><span class="menuOption">Difficulty: </span> <span id="Difficulty" class="G font-header">Normal</span></div>
+            <div id="ColorDisplayBtn"><span class="menuOption">Color Code: </span> <span id="ColorCode" class="font-header">RGB</span></div>
+            <div id="StartGameBtn" class="font-header">Start Game</div>
+          </div>
+        </main>
+        <footer>
+          <div class="text-right">© Aaron R. Newbold 2020</div>
+        </footer>
+      </div>
+      <div id="ActiveGame" class="hide">
+        <header class="container">
+          <h1 class="text-center title">JS - Color Game</h1>
+          <div id="ColorCoding"></div>
+          <div id="Points"><span>Score:</span> 0</div>
+          <div id="Lives"></div>
+          <div class="text-center m-t-1">
+            <i class="fas fa-stopwatch animate-grow"></i>
+            <div id="TimeClock" class=""></div>
+          </div>
+        </header>
+        <main>
+          <div id="GameBox">
+          </div>
+        </main>
+        <footer class="hide-sm">
+          <div class="text-right">© Aaron R. Newbold 2020</div>
+        </footer>
+      </div>
+      <div id="HighScoreMenu" class="hide paletteBG m-b-1">
+        <div class="flex-row center">
+          <div class="m-r-1">
+            <h1 class="font-header">Recent Score</h1>
+            <div id="RecentScore" class="scores">8</div>
+          </div>
+          <div>
+            <h1 class="font-header">Personal Best</h1>
+            <div id="PersonalBest" class="scores">16</div>
+          </div>
+        </div>
+        <div id="HighScores">
+          <h1 class="text-center font-large font-header">Global HighScores</h1>
+          <div class="flex-row center height-400 m-b">
+            <div class="m-r-5">
+              <h2 class="font-header">Difficulty: <span class="G">Normal</span></h2>
+              <table id="Normal">
+                <thead>
+                  <tr class="tableHeader font-header">
+                    <td>Place</td>
+                    <td>Alias</td>
+                    <td>Score</td>
+                  </tr>
+                </thead>
+                <tbody id='NormalBody'>
+                  <tr class="tableData">
+                    <td>1</td>
+                    <td>Aaron R. Newbold</td>
+                    <td>999</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="m-r-5">
+              <h2 class="font-header">Difficulty: <span class="R">Hard</span></h2>
+              <table id="Hard">
+                <thead>
+                  <tr class="tableHeader font-header">
+                    <td>Place</td>
+                    <td>Alias</td>
+                    <td>Score</td>
+                  </tr>
+                </thead>
+                <tbody id='HardBody'>
+                  <tr class="tableData">
+                    <td>1</td>
+                    <td>Aaron R. Newbold</td>
+                    <td>999</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div>
+              <h2 class="font-header">Difficulty: <spann class="B">Oops</spann></h2>
+              <table id="Oops">
+                <thead>
+                  <tr class="tableHeader font-header">
+                    <td>Place</td>
+                    <td>Alias</td>
+                    <td>Score</td>
+                  </tr>
+                </thead>
+                <tbody id='OopsBody'>
+                  <tr class="tableData">
+                    <td>1</td>
+                    <td>Aaron R. Newbold</td>
+                    <td>999</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id='Modal' class="modalOverlay hide">
+      <div id="ModalContent">
+        <div id="CountDown" class="hide">
+          <div id="Count">3</div>
+        </div>
+        <div id="GameOver" class="hide"></div>
+        <div id="AliasMenu" class="center width-auto hide">
+          <div id="AliasErrors"></div>
+          <div class="alias-title">Enter Alias</div>
+          <input id="Alias" type="text" maxlength="12" minlength="3" 
+          placeholder="3 or more characters" required/>
+          <button id="AliasBtn" type="button">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
