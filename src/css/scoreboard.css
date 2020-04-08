@@ -2,20 +2,20 @@
 
 table{
   border-collapse: collapse;
-  border-bottom: 1px solid #000;
-  border-right: 1px solid #000;
+  border-bottom: 1px solid #888;
+  border-right: 1px solid #888;
 }
 
 tbody > tr:nth-child(1) {
-  font-size: 1.8em;
+  font-size: 1.6em;
   background-color: #FC5;
 }
 tbody > tr:nth-child(2) {
-  font-size: 1.6em;
+  font-size: 1.4em;
   background-color: silver;
 }
 tbody > tr:nth-child(3) {
-  font-size: 1.4em;
+  font-size: 1.2em;
   background-color: rgb(158, 109, 89);
 }
 
