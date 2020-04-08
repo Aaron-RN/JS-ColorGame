@@ -11,6 +11,7 @@ const colorDisplayBtn = document.querySelector('#ColorDisplayBtn');
 const colorDisplayDiv = document.querySelector('#ColorCode');
 const startGameBtn = document.querySelector('#StartGameBtn');
 const modal = document.querySelector('#Modal');
+const aliasMenu = document.querySelector('#AliasMenu');
 const aliasBtn = document.querySelector('#AliasBtn');
 
 const favIconLink = document.createElement('link');
@@ -52,13 +53,22 @@ colorDisplayBtn.addEventListener('click', () => {
 
 startGameBtn.addEventListener('click', () => {
   playSound('menu');
-  const aliasMenu = document.querySelector('#AliasMenu');
   const aliasInput = document.querySelector('#Alias');
   aliasMenu.classList.toggle('hide');
-  aliasInput.focus();
   modal.classList.toggle('hide');
+  aliasInput.focus();
 });
 
+aliasMenu.addEventListener('focusout', (e) => {
+  const newFocus = e.relatedTarget;
+  if (!newFocus || (newFocus.textContent !== 'Confirm' && newFocus.id !== 'Alias')) {
+    // alert(newFocus);
+    aliasMenu.classList.add('hide');
+    modal.classList.toggle('hide');
+  }
+});
+
+// Alias Confirm Button Event:OnClick Function
 const App = new ColorGame();
 aliasBtn.addEventListener('click', () => {
   const aliasMenu = document.querySelector('#AliasMenu');
@@ -70,8 +80,8 @@ aliasBtn.addEventListener('click', () => {
     menuDiv.classList.toggle('hide');
     gameDiv.classList.toggle('hide');
     App.run(difficulty, colorDisplay, aliasValue);
-    modal.classList.toggle('hide');
-    aliasMenu.classList.toggle('hide');
+    aliasMenu.classList.add('hide');
+    modal.classList.add('hide');
   } else {
     playSound('menu');
     if (!aliasValue || aliasValue === ' ') errors.push('cannot be blank');
