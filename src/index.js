@@ -11,6 +11,7 @@ const colorDisplayBtn = document.querySelector('#ColorDisplayBtn');
 const colorDisplayDiv = document.querySelector('#ColorCode');
 const startGameBtn = document.querySelector('#StartGameBtn');
 const modal = document.querySelector('#Modal');
+const aliasMenu = document.querySelector('#AliasMenu');
 const aliasBtn = document.querySelector('#AliasBtn');
 
 const favIconLink = document.createElement('link');
@@ -52,15 +53,23 @@ colorDisplayBtn.addEventListener('click', () => {
 
 startGameBtn.addEventListener('click', () => {
   playSound('menu');
-  const aliasMenu = document.querySelector('#AliasMenu');
   const aliasInput = document.querySelector('#Alias');
   aliasMenu.classList.toggle('hide');
-  aliasInput.focus();
   modal.classList.toggle('hide');
+  aliasInput.focus();
+});
+
+aliasMenu.addEventListener('focusout', (e) => {
+  const newFocus = e.relatedTarget;
+  if (newFocus === null || newFocus.textContent !== 'Confirm') {
+    aliasMenu.classList.add('hide');
+    modal.classList.add('hide');
+  }
 });
 
 const App = new ColorGame();
-aliasBtn.addEventListener('click', () => {
+aliasBtn.addEventListener('click', (e) => {
+  e.preventDefault();
   const aliasMenu = document.querySelector('#AliasMenu');
   const aliasInput = document.querySelector('#Alias');
   const aliasValue = aliasInput.value.trim();
