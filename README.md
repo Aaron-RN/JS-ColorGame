@@ -5,7 +5,7 @@ Can you guess which color corresponds to the shown RGB and Hex code?
 ![screenshot](./screenshot2.png)
 
 
-## [Live DEMO](https://raw.githack.com/Aaron-RN/JS-ColorGame/development/dist/index.html)
+## [Live DEMO](https://raw.githack.com/Aaron-RN/JS-ColorGame/master/dist/index.html)
 
 ## Dependencies
 
