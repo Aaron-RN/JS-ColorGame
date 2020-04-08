@@ -15,20 +15,26 @@
   font-weight: bold;
 }
 #SoundMenu {
+  cursor: pointer;
   padding: 6px;
   position: absolute;
   right: 0;
   margin-top: 1em;
   margin-right: 2em;
   z-index: 99;
+}
+.soundMenuActive {
   background-color: #222;
   border: 1px solid #000;
 }
-#SoundMenu > i { position: relative; display: block; text-align: center; color: #00AAFF; }
+#SoundMenu > i { position: relative; display: block; text-align: center; }
+.fa-volume-up { color: #00AAFF; }
+.fa-volume-mute { color: #C44; }
 #SoundControls {
   position: relative;
 }
 #VolumeSlider {
+  cursor: grab;
   background-color: royalblue;
   color: #4C4;
   border: 1px solid green;
