@@ -1,0 +1,67 @@
+.gameover { font-size: 14vmin; }
+
+table{
+  border-collapse: collapse;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+tbody > tr:nth-child(1) {
+  font-size: 1.8em;
+  background-color: #FC5;
+}
+tbody > tr:nth-child(2) {
+  font-size: 1.6em;
+  background-color: silver;
+}
+tbody > tr:nth-child(3) {
+  font-size: 1.4em;
+  background-color: rgb(158, 109, 89);
+}
+
+tbody > tr > td:nth-child(2) {
+  text-transform: capitalize;
+}
+td { padding-right: 2em; }
+
+.tableHeader{
+  font-size: 4vmin;
+  font-weight: bold;
+  margin-right: 8px;
+  text-align: center;
+}
+
+.tableData { border-bottom: 1px solid #DDD; }
+
+#Normal { overflow-y: scroll; }
+#Hard { overflow-y: scroll; }
+#Oops { overflow-y: scroll; }
+
+.btn {
+  cursor: pointer;
+  pointer-events: all;
+  transition-duration: 0.25s;
+  font-size: 8vmin;
+  text-align: center;
+  border: 2px solid #000;
+  border-radius: 0.25em;
+  padding: 0.25em;
+}
+.btn:hover {
+  background-color: #F85;
+  transform: scale(1.1);
+}
+
+#MainMenuBtn {
+  font-size: 8vmin;
+  font-family: 'Cuprum', sans-serif !important;
+}
+#PlayAgainBtn {
+  font-size: 8vmin;
+  font-family: 'Cuprum', sans-serif !important;
+}
+
+.scores {
+  font-size: 4vmin;
+  text-align: center;
+}

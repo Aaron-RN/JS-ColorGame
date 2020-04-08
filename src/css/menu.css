@@ -1,0 +1,110 @@
+#GameMenu {
+  position: relative;
+  top: 8%;
+  font-size: 3.5vmin;
+  text-align: center;
+}
+.paletteBG {
+  background-repeat: no-repeat;
+  background-image: url(../images/pallette.png);
+  background-position: center;
+  background-size: 100%;
+}
+.menutitle {
+  font-size: 12vmin;
+  font-weight: bold;
+}
+#SoundMenu {
+  padding: 6px;
+  position: absolute;
+  right: 0;
+  margin-top: 1em;
+  margin-right: 2em;
+  z-index: 99;
+  background-color: #222;
+  border: 1px solid #000;
+}
+#SoundMenu > i { position: relative; display: block; text-align: center; color: #00AAFF; }
+#SoundControls {
+  position: relative;
+}
+#VolumeSlider {
+  background-color: royalblue;
+  color: #4C4;
+  border: 1px solid green;
+}
+
+.R{ text-shadow: 0 0 1px #E44; color: #C44;}
+.G{ text-shadow: 0 0 1px #4E4; color: #4C4; }
+.B{ text-shadow: 0 0 1px #44E; color: #44C;}
+.Y{ text-shadow: 0 0 1px #000; color: #FDA; }
+
+.exclaim { text-shadow: 0 0 3px #FC5; }
+.hint {
+  color: #555;
+  margin-top: 12px;
+}
+
+.menuButtons { margin-top: 1em; }
+.menuButtons > div {
+  transition-duration: 1s;
+  cursor: pointer;
+  margin: auto;
+  margin-top: 20px;
+  max-width: 400px;
+  font-size: 5vmin;
+  background-color: #E5E5E5;
+  border: 1px solid #E5C0C0;
+  border-radius: 0.6em;
+  padding: 0.6em;
+}
+.menuButtons > div:hover {
+  transform: scale(1.15);
+  background-color: #D5D5D5;
+  text-shadow: 0 0 3px#FDA;
+}
+.menuButtons *::selection{
+  color: none;
+  background: none;
+}
+.menuOption{ font-weight: bold; }
+
+#ColorCode{
+  color: #F85;
+  text-shadow: 0 0 1px #F55;
+}
+
+#StartGameBtn{
+  padding: 0.75em;
+  max-width: 480px;
+  font-size: 2em;
+  font-weight: bolder;
+  text-shadow: 0 0 3px #FDA;
+}
+
+/* StartGameBtn Alias input menu */
+.alias-title { font-size: 8vmin; font-weight: bold;}
+
+#Alias {
+  pointer-events: all;
+  font-size: 4vmin;
+  text-align: center;
+  border-radius: 0.25em;
+}
+#AliasErrors {
+  color: #C44;
+  font-size: 3vmin;
+  text-align: left;
+  text-shadow: 0 0 2px #F00;
+}
+
+#AliasBtn {
+  cursor: pointer;
+  pointer-events: all;
+  transition-duration: 0.25s;
+  font-size: 4vmin;
+  text-align: center;
+  border: 2px solid #000;
+  border-radius: 0.25em;
+}
+#AliasBtn:hover { background-color: #CA5; }

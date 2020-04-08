@@ -1,4 +1,7 @@
 import '../css/main.css';
+import '../css/menu.css';
+import '../css/scoreboard.css';
+import '../css/game.css';
 import playSound from '../models/audio';
 import RGBToHex from '../models/rgbToHex';
 import GameModel from '../models/game';
