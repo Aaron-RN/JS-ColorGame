@@ -59,14 +59,14 @@
   margin-top: 20px;
   max-width: 400px;
   font-size: 5vmin;
-  background-color: #E5E5E5;
-  border: 1px solid #E5C0C0;
+  background-color: #fff0e2;
+  border: 1px solid #888;
   border-radius: 0.6em;
   padding: 0.6em;
 }
 .menuButtons > div:hover {
-  transform: scale(1.15);
-  background-color: #D5D5D5;
+  transform: scale(1.10);
+  background-color: rgb(255, 248, 184);
   text-shadow: 0 0 3px#FDA;
 }
 .menuButtons *::selection{
@@ -86,6 +86,12 @@
   font-size: 2em;
   font-weight: bolder;
   text-shadow: 0 0 3px #FDA;
+}
+
+/* GameStart Countdown */
+#Count {
+  font-size: 36vmin;
+  text-shadow: 0 0 10px #48E;
 }
 
 /* StartGameBtn Alias input menu */

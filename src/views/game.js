@@ -8,6 +8,7 @@ import GameModel from '../models/game';
 import { updateScore } from './populateScores';
 
 const URI = 'http://localhost:5000/highscores/';
+
 function RemoveChildren(elem) {
   while (elem.firstChild) {
     elem.removeChild(elem.lastChild);
@@ -72,12 +73,33 @@ class GameView {
     this.lastClickLocation = null;
   }
 
+  CountDown() {
+    const CountDownDiv = document.querySelector('#CountDown');
+    const CountElem = document.querySelector('#Count');
+    CountDownDiv.classList.toggle('animate-fade-in-out');
+    CountDownDiv.classList.toggle('hide');
+    let countdown = 3;
+    CountElem.textContent = countdown;
+    const countdownTimer = setInterval(() => {
+      countdown -= 1;
+      CountElem.textContent = countdown;
+      playSound('countdown');
+    }, 2000);
+    setTimeout(() => {
+      CountDownDiv.classList.toggle('hide');
+      this.Modal.classList.toggle('hide');
+      CountDownDiv.classList.toggle('animate-fade-in-out');
+      clearInterval(countdownTimer);
+      playSound('gameStart');
+      this.newRound();
+    }, 6000);
+  }
+
   run(setDifficulty, setColorDisplay, setPlayerAlias) {
-    playSound('gameStart');
     this.game = new GameModel();
     this.game.NewGame(setDifficulty, setColorDisplay, setPlayerAlias);
     ShowHearts(this.Lives, this.game.lives);
-    this.newRound();
+    this.CountDown();
   }
 
   PlayAgain() {

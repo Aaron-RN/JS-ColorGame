@@ -7,6 +7,7 @@ import highScore from '../sfx/highScore.ogg';
 import bootup from '../sfx/bootup.ogg';
 import alarm from '../sfx/alarm.wav';
 import menu from '../sfx/menuclick.wav';
+import countdown from '../sfx/time.ogg';
 
 const SoundMenu = document.querySelector('#SoundMenu');
 const SoundIcon = document.querySelector('#SoundIcon');
@@ -44,6 +45,7 @@ function playSound(snd) {
     snd.play();
   }
   if (snd === 'heartbreak') { const snd = new Audio(heartbreak); snd.volume = sliderVolume; snd.play(); }
+  if (snd === 'countdown') { const snd = new Audio(countdown); snd.volume = sliderVolume; snd.play(); }
   if (snd === 'alarm') { const snd = new Audio(alarm); snd.volume = sliderVolume; snd.play(); }
 
   if (snd === 'gameover') {

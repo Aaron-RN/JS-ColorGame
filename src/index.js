@@ -61,15 +61,16 @@ startGameBtn.addEventListener('click', () => {
 
 aliasMenu.addEventListener('focusout', (e) => {
   const newFocus = e.relatedTarget;
-  if (newFocus === null || newFocus.textContent !== 'Confirm') {
+  if (!newFocus || (newFocus.textContent !== 'Confirm' && newFocus.id !== 'Alias')) {
+    // alert(newFocus);
     aliasMenu.classList.add('hide');
-    modal.classList.add('hide');
+    modal.classList.toggle('hide');
   }
 });
 
+// Alias Confirm Button Event:OnClick Function
 const App = new ColorGame();
-aliasBtn.addEventListener('click', (e) => {
-  e.preventDefault();
+aliasBtn.addEventListener('click', () => {
   const aliasMenu = document.querySelector('#AliasMenu');
   const aliasInput = document.querySelector('#Alias');
   const aliasValue = aliasInput.value.trim();
@@ -79,8 +80,8 @@ aliasBtn.addEventListener('click', (e) => {
     menuDiv.classList.toggle('hide');
     gameDiv.classList.toggle('hide');
     App.run(difficulty, colorDisplay, aliasValue);
-    modal.classList.toggle('hide');
-    aliasMenu.classList.toggle('hide');
+    aliasMenu.classList.add('hide');
+    modal.classList.add('hide');
   } else {
     playSound('menu');
     if (!aliasValue || aliasValue === ' ') errors.push('cannot be blank');
