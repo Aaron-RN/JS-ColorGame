@@ -20,7 +20,8 @@
         <header>
           <div class="menutitle font-header">
             <i class="fas fa-palette Y"></i>
-            <span class="R">The</span> <span class="G">Color</span> <span class="B">Game</span><span class="animate-title exclaim">!</span> 
+            <!-- <span class="R">The</span> <span class="G">Color</span> <span class="B">Game</span><span class="animate-title exclaim">!</span>  -->
+            <div id="GameTitle"></div>
             <i class="fas fa-cube hide-sm Y"></i>
           </div>
           <div class="hint">Can you guess that color just by looking at either the Hexadecimal or RGB values?</div>
@@ -58,7 +59,7 @@
       <div id="HighScoreMenu" class="hide paletteBG m-b-1">
         <div class="flex-row center">
           <div class="m-r-1">
-            <h1 class="font-header">Recent Score</h1>
+            <h1 class="font-header">Score</h1>
             <div id="RecentScore" class="scores">8</div>
           </div>
           <div>
@@ -82,7 +83,7 @@
                 <tbody id='NormalBody'>
                   <tr class="tableData">
                     <td>1</td>
-                    <td>Aaron R. Newbold</td>
+                    <td>Aaron R.</td>
                     <td>999</td>
                   </tr>
                 </tbody>
@@ -101,7 +102,7 @@
                 <tbody id='HardBody'>
                   <tr class="tableData">
                     <td>1</td>
-                    <td>Aaron R. Newbold</td>
+                    <td>Aaron R.</td>
                     <td>999</td>
                   </tr>
                 </tbody>
@@ -120,7 +121,7 @@
                 <tbody id='OopsBody'>
                   <tr class="tableData">
                     <td>1</td>
-                    <td>Aaron R. Newbold</td>
+                    <td>Aaron R.</td>
                     <td>999</td>
                   </tr>
                 </tbody>
@@ -132,6 +133,14 @@
     </div>
     <div id='Modal' class="modalOverlay hide">
       <div id="ModalContent">
+        <div id="LoadMenu" class="hide">
+          <div id="Loader"></div>
+          <div id="LoaderText">Loading Scores
+            <span class="dots">.</span>
+            <span class="dots">.</span>
+            <span class="dots">.</span>
+          </div>
+        </div>
         <div id="CountDown" class="hide">
           <div id="Count">3</div>
         </div>

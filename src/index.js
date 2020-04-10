@@ -1,6 +1,29 @@
 import ColorGame from './views/game';
 import playSound from './models/audio';
 import favIcon from './images/pallette.png';
+import The from './images/The.svg';
+import Color from './images/Color.svg';
+import Game from './images/Game.svg';
+import Exclaim from './images/Exclaim.svg';
+
+// The Color Game! Title is constructed
+const GameTitle = document.querySelector('#GameTitle');
+const TheText = document.createElement('img');
+TheText.setAttribute('src', The);
+TheText.setAttribute('id', 'TheText');
+const ColorText = document.createElement('img');
+ColorText.setAttribute('src', Color);
+ColorText.setAttribute('id', 'ColorText');
+const GameText = document.createElement('img');
+GameText.setAttribute('src', Game);
+GameText.setAttribute('id', 'GameText');
+const ExclaimText = document.createElement('img');
+ExclaimText.setAttribute('src', Exclaim);
+ExclaimText.setAttribute('id', 'ExclaimText');
+GameTitle.appendChild(TheText);
+GameTitle.appendChild(ColorText);
+GameTitle.appendChild(GameText);
+GameTitle.appendChild(ExclaimText);
 
 const Head = document.querySelector('head');
 const menuDiv = document.querySelector('#GameMenu');

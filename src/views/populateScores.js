@@ -2,6 +2,11 @@
 /* eslint-disable import/no-unresolved */
 import axios from 'axios';
 
+const Body = document.querySelector('#main');
+const Modal = document.querySelector('#Modal');
+const Loader = document.querySelector('#LoadMenu');
+
+
 async function populateScores(URI) {
   const normalScores = await axios.get(`${URI}normal`)
     .then((response) => response.data)
@@ -34,6 +39,9 @@ async function populateScores(URI) {
   highScoreNormalTable.innerHTML = normalData;
   highScoreHardTable.innerHTML = hardData;
   highScoreOopsTable.innerHTML = oopsData;
+  Body.classList.remove('blur');
+  Modal.classList.add('hide');
+  Loader.classList.add('hide');
 }
 
 async function updateScore(URI, alias, difficulty, newScore) {

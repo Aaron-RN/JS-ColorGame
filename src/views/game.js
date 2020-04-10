@@ -70,6 +70,7 @@ class GameView {
     this.Modal = document.querySelector('#Modal');
     this.ModalContent = document.querySelector('#ModalContent');
     this.GameOverMenu = document.querySelector('#GameOver');
+    this.Loader = document.querySelector('#LoadMenu');
     this.lastClickLocation = null;
   }
 
@@ -150,14 +151,13 @@ class GameView {
     this.Modal.classList.toggle('hide');
     this.Modal.classList.add('animate-gameover');
     this.GameOverMenu.classList.toggle('hide');
-    updateScore(URI, this.game.playerAlias, this.game.difficulty, this.game.pointsScored);
     setTimeout(() => {
       this.Modal.classList.remove('animate-gameover');
-      this.Body.classList.remove('blur');
-      this.Modal.classList.toggle('hide');
       this.GameOverMenu.classList.toggle('hide');
+      this.Loader.classList.toggle('hide');
       document.querySelector('#ActiveGame').classList.toggle('hide');
       highScoreMenu.classList.toggle('hide');
+      updateScore(URI, this.game.playerAlias, this.game.difficulty, this.game.pointsScored);
     }, 1400);
     // Check browser support
     if (typeof (Storage) !== 'undefined') {
@@ -182,7 +182,7 @@ class GameView {
   ClickColor(e, i) {
     const mouseLocation = e ? { X: e.clientX, Y: e.clientY } : null;
     const { board } = this.game;
-    if (this.game.gameOver) return;
+    if (this.game.gameOver || !this.game.gameStarted) return;
     const colorSelected = board.retrieveColor(i);
     if (this.game.checkColor(colorSelected)) {
       this.PlusPoint(mouseLocation);

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg4828"
+   version="1.1"
+   preserveAspectRatio="xMidYMid"
+   viewBox="123.95376 14.59496 192 69.999999"
+   height="70"
+   width="192">
+  <metadata
+     id="metadata4832">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4810">
+    <filter
+       height="3"
+       width="3"
+       y="-1"
+       x="-1"
+       id="editing-vintage">
+      <feConvolveMatrix
+         id="feConvolveMatrix4755"
+         kernelMatrix="1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1"
+         divisor="1"
+         order="9,9"
+         result="extrude"
+         in="SourceGraphic" />
+      <feFlood
+         id="feFlood4757"
+         result="flood-extrude"
+         flood-color="#009950" />
+      <feComposite
+         id="feComposite4759"
+         result="extrude-color"
+         in2="extrude"
+         in="flood-extrude"
+         operator="in" />
+      <feOffset
+         id="feOffset4761"
+         result="extrude-offset"
+         in="extrude-color"
+         dy="5"
+         dx="5" />
+      <feColorMatrix
+         id="feColorMatrix4763"
+         values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 "
+         type="matrix"
+         result="stroke"
+         in="SourceGraphic" />
+      <feColorMatrix
+         id="feColorMatrix4765"
+         values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 "
+         type="matrix"
+         result="fill"
+         in="SourceGraphic" />
+      <feConvolveMatrix
+         id="feConvolveMatrix4767"
+         kernelMatrix="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 "
+         divisor="1"
+         order="5,5"
+         result="inner-shadow"
+         in="stroke" />
+      <feOffset
+         id="feOffset4769"
+         result="offset"
+         in="inner-shadow"
+         dy="1"
+         dx="1" />
+      <feComposite
+         id="feComposite4771"
+         result="comp"
+         in2="SourceAlpha"
+         in="offset"
+         operator="in" />
+      <feFlood
+         id="feFlood4773"
+         result="flood3"
+         flood-color="#000" />
+      <feComposite
+         id="feComposite4775"
+         result="comp2"
+         in2="comp"
+         in="flood3"
+         operator="in" />
+      <feColorMatrix
+         id="feColorMatrix4777"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.5 0 "
+         type="matrix"
+         result="comp3"
+         in="comp2" />
+      <feFlood
+         id="feFlood4779"
+         result="flood1"
+         flood-color="#4bff00" />
+      <feComposite
+         id="feComposite4781"
+         result="fill2"
+         in2="fill"
+         in="flood1"
+         operator="in" />
+      <feFlood
+         id="feFlood4783"
+         result="flood2"
+         flood-color="#fff" />
+      <feComposite
+         id="feComposite4785"
+         result="stroke2"
+         in2="stroke"
+         in="flood2"
+         operator="in" />
+      <feMerge
+         id="feMerge4793"
+         result="obj">
+        <feMergeNode
+           id="feMergeNode4787"
+           in="extrude-offset" />
+        <feMergeNode
+           id="feMergeNode4789"
+           in="fill2" />
+        <feMergeNode
+           id="feMergeNode4791"
+           in="comp3" />
+      </feMerge>
+      <feConvolveMatrix
+         id="feConvolveMatrix4795"
+         kernelMatrix="1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1"
+         divisor="1"
+         order="9,9"
+         result="shadow"
+         in="SourceAlpha" />
+      <feOffset
+         id="feOffset4797"
+         result="shadow-offset"
+         in="shadow"
+         dy="15"
+         dx="15" />
+      <feFlood
+         id="feFlood4799"
+         result="flood-shadow"
+         flood-color="#444444" />
+      <feComposite
+         id="feComposite4801"
+         result="shadow-color"
+         in2="shadow-offset"
+         in="flood-shadow"
+         operator="in" />
+      <feMerge
+         id="feMerge4807">
+        <feMergeNode
+           id="feMergeNode4803"
+           in="shadow-color" />
+        <feMergeNode
+           id="feMergeNode4805"
+           in="obj" />
+      </feMerge>
+    </filter>
+  </defs>
+  <g
+     id="g4824"
+     transform="translate(-38.00179,-34.526469)">
+    <g
+       style="filter:url(#editing-vintage)"
+       id="g4816">
+      <g
+         id="g4814"
+         transform="translate(164.24563,98.68)">
+        <path
+           style="fill:#ff0000;stroke:#00ff00;stroke-width:1.79999995"
+           id="path4812"
+           d="m 34.5,-13.25 v 0 0 q 1.66,1.22 1.66,3.81 v 0 0 q 0,2.59 -1.12,4.42 v 0 0 q -1.12,1.82 -3.3,3.23 v 0 0 Q 27.07,1.22 18.91,1.22 v 0 0 q -8.16,0 -12.61,-4.26 v 0 0 Q 1.86,-7.3 1.86,-14.85 v 0 0 q 0,-10.69 5.56,-18.81 v 0 0 q 4.23,-6.02 11.78,-8.58 v 0 0 q 3.9,-1.28 7.74,-1.28 v 0 0 q 3.84,0 6.21,0.51 v 0 0 q 2.37,0.51 4.16,1.54 v 0 0 q 3.91,2.24 3.91,5.82 v 0 0 q 0,3.27 -3.08,5.7 v 0 0 q -2.81,2.17 -5.12,2.17 v 0 0 q -2.3,0 -3.26,-0.32 v 0 0 q 0.26,-2.3 0.26,-3.8 v 0 0 q 0,-1.51 -0.07,-2.6 v 0 0 q -0.06,-1.08 -0.38,-2.11 v 0 0 q -0.64,-2.37 -2.59,-2.37 v 0 0 q -1.96,0 -3.91,1.83 v 0 0 q -1.95,1.82 -3.61,4.89 v 0 0 q -3.78,6.98 -3.78,15.24 v 0 0 q 0,3.96 2.24,6.24 v 0 0 q 2.24,2.27 7.04,2.27 v 0 0 q 3.58,0 6.98,-2.37 v 0 0 q 1.47,-1.02 2.56,-2.37 z M 55.42,1.28 v 0 0 q -14.08,0 -14.08,-13.25 v 0 0 q 0,-9.41 5.19,-15.49 v 0 0 q 5.5,-6.46 15.04,-6.46 v 0 0 q 6.91,0 10.43,3.2 v 0 0 q 3.52,3.2 3.52,9.92 v 0 0 q 0,10.24 -5.5,16.19 v 0 0 q -5.38,5.89 -14.6,5.89 z m 1.67,-27.84 v 0 0 q -0.77,1.73 -1.38,4.32 v 0 0 q -0.61,2.59 -1.37,6.69 v 0 0 q -0.77,4.09 -0.77,9.15 v 0 0 q 0,1.66 0.54,2.75 v 0 0 q 0.55,1.09 2.02,1.09 v 0 0 q 1.47,0 2.4,-0.7 v 0 0 q 0.93,-0.71 1.63,-2.37 v 0 0 q 1.28,-2.95 2.3,-8.42 v 0 0 q 1.03,-5.47 1.12,-7.84 v 0 0 q 0.1,-2.37 0.1,-4.13 v 0 0 q 0,-1.76 -0.51,-2.91 v 0 0 q -0.51,-1.15 -1.95,-1.15 v 0 0 q -1.44,0 -2.4,0.9 v 0 0 q -0.96,0.89 -1.73,2.62 z m 37.5,23.04 v 0 0 q -1.98,4.8 -8.32,4.8 v 0 0 q -3.2,0 -5.25,-2.24 v 0 0 q -1.66,-1.86 -1.66,-3.97 v 0 0 q 0,-4.8 2.24,-15.29 v 0 l 4.67,-24.58 12.99,-1.28 -6.2,32.38 v 0 q -1.09,4.74 -1.09,6.4 v 0 0 q 0,3.65 2.62,3.78 z m 19.39,4.8 v 0 0 Q 99.9,1.28 99.9,-11.97 v 0 0 q 0,-9.41 5.19,-15.49 v 0 0 q 5.5,-6.46 15.04,-6.46 v 0 0 q 6.91,0 10.43,3.2 v 0 0 q 3.52,3.2 3.52,9.92 v 0 0 q 0,10.24 -5.5,16.19 v 0 0 q -5.38,5.89 -14.6,5.89 z m 1.67,-27.84 v 0 0 q -0.77,1.73 -1.38,4.32 v 0 0 q -0.61,2.59 -1.37,6.69 v 0 0 q -0.77,4.09 -0.77,9.15 v 0 0 q 0,1.66 0.54,2.75 v 0 0 q 0.55,1.09 2.02,1.09 v 0 0 q 1.47,0 2.4,-0.7 v 0 0 q 0.93,-0.71 1.63,-2.37 v 0 0 q 1.28,-2.95 2.3,-8.42 v 0 0 q 1.03,-5.47 1.12,-7.84 v 0 0 q 0.1,-2.37 0.1,-4.13 v 0 0 q 0,-1.76 -0.51,-2.91 v 0 0 q -0.51,-1.15 -1.95,-1.15 v 0 0 q -1.44,0 -2.4,0.9 v 0 0 q -0.96,0.89 -1.73,2.62 z m 42.24,8.58 v 0 0 q 2.3,-4.1 2.3,-8.26 v 0 0 q 0,-2.75 -1.98,-2.75 v 0 0 q -1.54,0 -3.14,2.62 v 0 0 q -1.66,2.63 -2.17,6.02 v 0 L 149.57,0 l -13.25,1.28 6.53,-33.92 10.56,-1.28 -1.15,6.46 v 0 q 3.13,-6.46 10.17,-6.46 v 0 0 q 3.71,0 5.73,1.92 v 0 0 q 2.02,1.92 2.02,5.86 v 0 0 q 0,3.93 -2.6,6.43 v 0 0 q -2.59,2.49 -7,2.49 v 0 0 q -1.92,0 -2.69,-0.76 z" />
+      </g>
+    </g>
+    <g
+       id="g4822">
+      <g
+         id="g4820"
+         transform="translate(164.51125,98.68)">
+        <path
+           style="fill:none;stroke:#f4ffc4;stroke-width:2.0999999"
+           id="path4818"
+           d="m 34.5,-13.25 v 0 0 q 1.66,1.22 1.66,3.81 v 0 0 q 0,2.59 -1.12,4.42 v 0 0 q -1.12,1.82 -3.3,3.23 v 0 0 Q 27.07,1.22 18.91,1.22 v 0 0 q -8.16,0 -12.61,-4.26 v 0 0 Q 1.86,-7.3 1.86,-14.85 v 0 0 q 0,-10.69 5.56,-18.81 v 0 0 q 4.23,-6.02 11.78,-8.58 v 0 0 q 3.9,-1.28 7.74,-1.28 v 0 0 q 3.84,0 6.21,0.51 v 0 0 q 2.37,0.51 4.16,1.54 v 0 0 q 3.91,2.24 3.91,5.82 v 0 0 q 0,3.27 -3.08,5.7 v 0 0 q -2.81,2.17 -5.12,2.17 v 0 0 q -2.3,0 -3.26,-0.32 v 0 0 q 0.26,-2.3 0.26,-3.8 v 0 0 q 0,-1.51 -0.07,-2.6 v 0 0 q -0.06,-1.08 -0.38,-2.11 v 0 0 q -0.64,-2.37 -2.59,-2.37 v 0 0 q -1.96,0 -3.91,1.83 v 0 0 q -1.95,1.82 -3.61,4.89 v 0 0 q -3.78,6.98 -3.78,15.24 v 0 0 q 0,3.96 2.24,6.24 v 0 0 q 2.24,2.27 7.04,2.27 v 0 0 q 3.58,0 6.98,-2.37 v 0 0 q 1.47,-1.02 2.56,-2.37 z M 55.42,1.28 v 0 0 q -14.08,0 -14.08,-13.25 v 0 0 q 0,-9.41 5.19,-15.49 v 0 0 q 5.5,-6.46 15.04,-6.46 v 0 0 q 6.91,0 10.43,3.2 v 0 0 q 3.52,3.2 3.52,9.92 v 0 0 q 0,10.24 -5.5,16.19 v 0 0 q -5.38,5.89 -14.6,5.89 z m 1.67,-27.84 v 0 0 q -0.77,1.73 -1.38,4.32 v 0 0 q -0.61,2.59 -1.37,6.69 v 0 0 q -0.77,4.09 -0.77,9.15 v 0 0 q 0,1.66 0.54,2.75 v 0 0 q 0.55,1.09 2.02,1.09 v 0 0 q 1.47,0 2.4,-0.7 v 0 0 q 0.93,-0.71 1.63,-2.37 v 0 0 q 1.28,-2.95 2.3,-8.42 v 0 0 q 1.03,-5.47 1.12,-7.84 v 0 0 q 0.1,-2.37 0.1,-4.13 v 0 0 q 0,-1.76 -0.51,-2.91 v 0 0 q -0.51,-1.15 -1.95,-1.15 v 0 0 q -1.44,0 -2.4,0.9 v 0 0 q -0.96,0.89 -1.73,2.62 z m 37.5,23.04 v 0 0 q -1.98,4.8 -8.32,4.8 v 0 0 q -3.2,0 -5.25,-2.24 v 0 0 q -1.66,-1.86 -1.66,-3.97 v 0 0 q 0,-4.8 2.24,-15.29 v 0 l 4.67,-24.58 12.99,-1.28 -6.2,32.38 v 0 q -1.09,4.74 -1.09,6.4 v 0 0 q 0,3.65 2.62,3.78 z m 19.39,4.8 v 0 0 Q 99.9,1.28 99.9,-11.97 v 0 0 q 0,-9.41 5.19,-15.49 v 0 0 q 5.5,-6.46 15.04,-6.46 v 0 0 q 6.91,0 10.43,3.2 v 0 0 q 3.52,3.2 3.52,9.92 v 0 0 q 0,10.24 -5.5,16.19 v 0 0 q -5.38,5.89 -14.6,5.89 z m 1.67,-27.84 v 0 0 q -0.77,1.73 -1.38,4.32 v 0 0 q -0.61,2.59 -1.37,6.69 v 0 0 q -0.77,4.09 -0.77,9.15 v 0 0 q 0,1.66 0.54,2.75 v 0 0 q 0.55,1.09 2.02,1.09 v 0 0 q 1.47,0 2.4,-0.7 v 0 0 q 0.93,-0.71 1.63,-2.37 v 0 0 q 1.28,-2.95 2.3,-8.42 v 0 0 q 1.03,-5.47 1.12,-7.84 v 0 0 q 0.1,-2.37 0.1,-4.13 v 0 0 q 0,-1.76 -0.51,-2.91 v 0 0 q -0.51,-1.15 -1.95,-1.15 v 0 0 q -1.44,0 -2.4,0.9 v 0 0 q -0.96,0.89 -1.73,2.62 z m 42.24,8.58 v 0 0 q 2.3,-4.1 2.3,-8.26 v 0 0 q 0,-2.75 -1.98,-2.75 v 0 0 q -1.54,0 -3.14,2.62 v 0 0 q -1.66,2.63 -2.17,6.02 v 0 L 149.57,0 l -13.25,1.28 6.53,-33.92 10.56,-1.28 -1.15,6.46 v 0 q 3.13,-6.46 10.17,-6.46 v 0 0 q 3.71,0 5.73,1.92 v 0 0 q 2.02,1.92 2.02,5.86 v 0 0 q 0,3.93 -2.6,6.43 v 0 0 q -2.59,2.49 -7,2.49 v 0 0 q -1.92,0 -2.69,-0.76 z" />
+      </g>
+    </g>
+  </g>
+  <style
+     id="style4826">text {
+  font-size: 64px;
+  font-family: Arial Black;
+  dominant-baseline: central;
+  text-anchor: middle;
+}</style>
+</svg>

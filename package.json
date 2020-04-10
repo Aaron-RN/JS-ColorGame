@@ -8,7 +8,9 @@
     "build": "webpack --mode production",
     "watch": "webpack --watch --mode development",
     "start": "node ./src/backend/server.js",
-    "nodemon": "nodemon ./src/backend/server.js"
+    "nodemon": "nodemon ./src/backend/server.js",
+    "server": "webpack-dev-server --content-base dist"
+
   },
   "repository": {
     "type": "git",

@@ -6,7 +6,7 @@
 }
 .paletteBG {
   background-repeat: no-repeat;
-  background-image: url(../images/pallette.png);
+  background-image: url(../images/pallette.svg);
   background-position: center;
   background-size: 100%;
 }
@@ -14,6 +14,13 @@
   font-size: 12vmin;
   font-weight: bold;
 }
+#GameTitle { display: inline-block; }
+
+#TheText { width: 18vmin; }
+#ColorText { width: 26vmin; }
+#GameText { width: 25vmin; }
+#ExclaimText { width: 8vmin; }
+
 #SoundMenu {
   cursor: pointer;
   padding: 6px;
@@ -34,10 +41,15 @@
   position: relative;
 }
 #VolumeSlider {
+  -webkit-appearance: none;
   cursor: grab;
-  background-color: royalblue;
-  color: #4C4;
-  border: 1px solid green;
+  background-color: #51a8d3;
+  overflow: hidden;
+}
+#VolumeSlider::-webkit-slider-runnable-track{
+  -webkit-appearance: none;
+  color: #00AAFF;
+  height: 10px;
 }
 
 .R{ text-shadow: 0 0 1px #E44; color: #C44;}
