@@ -91,9 +91,8 @@ aliasMenu.addEventListener('focusout', (e) => {
   }
 });
 
-// Alias Confirm Button Event:OnClick Function
-const App = new ColorGame();
-aliasBtn.addEventListener('click', () => {
+
+function AliasConfirm(App) {
   const aliasMenu = document.querySelector('#AliasMenu');
   const aliasInput = document.querySelector('#Alias');
   const aliasValue = aliasInput.value.trim();
@@ -113,5 +112,14 @@ aliasBtn.addEventListener('click', () => {
     aliasErrors.innerHTML = errors.map(error => {
       return `Alias: <span class="text-white">"${aliasInput.value}"</span> ${error} <br>`;
     }).join('');
+  }
+}
+
+// Alias Confirm Button Event:OnClick Function
+const App = new ColorGame();
+aliasBtn.addEventListener('click', () => AliasConfirm(App));
+window.addEventListener('keydown', event => {
+  if (event.key === 'Enter') {
+    aliasBtn.focus();
   }
 });
