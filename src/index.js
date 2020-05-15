@@ -25,7 +25,6 @@ GameTitle.appendChild(ColorText);
 GameTitle.appendChild(GameText);
 GameTitle.appendChild(ExclaimText);
 
-const Head = document.querySelector('head');
 const menuDiv = document.querySelector('#GameMenu');
 const gameDiv = document.querySelector('#ActiveGame');
 const difficultyBtn = document.querySelector('#DifficultyBtn');
@@ -41,7 +40,7 @@ const favIconLink = document.createElement('link');
 favIconLink.setAttribute('rel', 'icon');
 favIconLink.setAttribute('type', 'image/png');
 favIconLink.setAttribute('href', favIcon);
-Head.appendChild(favIconLink);
+document.querySelector('head').appendChild(favIconLink);
 
 let difficulty = 'Normal';
 let colorDisplay = 'RGB';
