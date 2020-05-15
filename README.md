@@ -1,4 +1,6 @@
 # JS-ColorGame
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5e0b327d-8311-44d4-b234-6482d87de7e3/deploy-status)](https://app.netlify.com/sites/js-colorgame/deploys)
+
 Can you guess which color corresponds to the shown RGB and Hex code?
 
 ![screenshot](./screenshot.png)
