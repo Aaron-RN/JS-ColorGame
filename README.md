@@ -27,7 +27,7 @@ Can you guess which color corresponds to the shown RGB and Hex code?
 
 ### Clone Repository
 
-Grab a clone of [this repository](https://github.com/Aaron-RN/REACT-REDUX-TMDB-MovieDB/tree/v1.0) from Github
+Grab a clone of [this repository](https://github.com/Aaron-RN/JS-ColorGame) from Github
 
 ### Install Dependencies
 
