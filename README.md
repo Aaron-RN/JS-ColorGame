@@ -23,12 +23,33 @@ Can you guess which color corresponds to the shown RGB and Hex code?
 - [Node.js](https://www.nodejs.org/)
 - [MongoDB](https://www.mongodb.com/)
 
+## Setup for Local use
+
+### Clone Repository
+
+Grab a clone of [this repository](https://github.com/Aaron-RN/REACT-REDUX-TMDB-MovieDB/tree/v1.0) from Github
+
+### Install Dependencies
+
+```
+$ npm install
+```
+
+### Run Application
+
+```
+$ npm run start
+```
+
+### Automated Tests
+
+There are no automated tests available for this project right now but in the future Jest Testing will be done.
 
 ## Author
 
 👤 **Aaron Rory**
 
-- Github: [@Aaron-RN](https://github.com/Aaron-RN)
+- GitHub: [@Aaron-RN](https://github.com/Aaron-RN)
 - Twitter: [@ARNewbold](https://twitter.com/ARNewbold)
 - Linkedin: [Aaron Newbold](https://www.linkedin.com/in/aaron-newbold-1b9233187/)
 
