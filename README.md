@@ -3,6 +3,8 @@
 
 Can you guess which color corresponds to the shown RGB and Hex code?
 
+This repository is a color guessing game built using Vanilla JavaScript. Can you guess which color corresponds with the text description shown for the color in question as either RGB or Hexadecimal.
+
 ![screenshot](./screenshot.png)
 ![screenshot](./screenshot2.png)
 
