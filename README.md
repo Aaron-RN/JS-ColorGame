@@ -27,6 +27,27 @@ This repository is a color guessing game built using Vanilla JavaScript. Can you
 - [Node.js](https://www.nodejs.org/)
 - [MongoDB](https://www.mongodb.com/)
 
+## Setup for Local use
+
+### Clone Repository
+
+Grab a clone of [this repository](https://github.com/Aaron-RN/JS-ColorGame) from Github
+
+### Install Dependencies
+
+```
+$ npm install
+```
+
+### Run Application
+
+```
+$ npm run start
+```
+
+### Automated Tests
+
+There are no automated tests available for this project right now, but in the future Jest Testing will be done.
 
 ## Author
 
