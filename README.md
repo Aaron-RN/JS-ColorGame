@@ -45,7 +45,7 @@ $ npm run start
 
 ### Automated Tests
 
-There are no automated tests available for this project right now but in the future Jest Testing will be done.
+There are no automated tests available for this project right now, but in the future Jest Testing will be done.
 
 ## Author
 
