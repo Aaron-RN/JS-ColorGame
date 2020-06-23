@@ -26,7 +26,7 @@ class Board {
   }
 
   retrieveColor(i) {
-    if (i === '-1') return { r: 0, g: 0, b: 0 };
+    if (i === '-1' || i === undefined) return { r: 0, g: 0, b: 0 };
     const colorBox = this.colors[i];
     return { r: colorBox.r, g: colorBox.g, b: colorBox.b };
   }

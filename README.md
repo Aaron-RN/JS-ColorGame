@@ -1,4 +1,6 @@
 # JS-ColorGame
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5e0b327d-8311-44d4-b234-6482d87de7e3/deploy-status)](https://app.netlify.com/sites/js-colorgame/deploys)
+
 Can you guess which color corresponds to the shown RGB and Hex code?
 
 This repository is a color guessing game built using Vanilla JavaScript. Can you guess which of the colors shown correspond with the text description shown. Formats available in both RGB and Hexadecimal.
@@ -7,7 +9,7 @@ This repository is a color guessing game built using Vanilla JavaScript. Can you
 ![screenshot](./screenshot2.png)
 
 
-## [Live DEMO](https://raw.githack.com/Aaron-RN/JS-ColorGame/development/dist/index.html)
+## [Live DEMO](https://js-colorgame.netlify.com/)
 
 ## Dependencies
 

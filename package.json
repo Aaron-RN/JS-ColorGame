@@ -7,8 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
     "watch": "webpack --watch --mode development",
-    "start": "webpack-dev-server --content-base dist",
-    "nodemon": "nodemon ./src/backend/server.js"
+    "start": "node ./src/backend/server.js",
+    "nodemon": "nodemon ./src/backend/server.js",
+    "server": "webpack-dev-server --content-base dist"
+
   },
   "repository": {
     "type": "git",
@@ -39,5 +41,8 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.7"
+  },
+  "engines": {
+    "node": "13.7.0"
   }
 }

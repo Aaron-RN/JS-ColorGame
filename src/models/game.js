@@ -10,7 +10,7 @@ class GameModel {
     this.R = null;
     this.G = null;
     this.B = null;
-    this.round = 1;
+    this.gameStarted = false;
     this.pointsScored = 0;
     this.lives = 3;
     this.maxRoundTime = 10;
@@ -45,6 +45,7 @@ class GameModel {
     this.G = Math.floor(Math.random() * 255);
     this.B = Math.floor(Math.random() * 255);
     this.board.PopulateColors(this.R, this.G, this.B);
+    this.gameStarted = true;
   }
 
   NewGame(setDifficulty, setColorDisplay, setPlayerAlias) {
